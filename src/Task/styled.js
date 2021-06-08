@@ -50,7 +50,8 @@ export const Content = styled.p`
   margin: 0;
   flex-basis: 100%;
   padding: 0 15px;
-  overflow-wrap: break-word;
+  word-break: break-word;
+
   ${({ done }) =>
     done &&
     css`
