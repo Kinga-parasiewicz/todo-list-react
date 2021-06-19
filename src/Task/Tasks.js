@@ -4,9 +4,13 @@ export const Tasks = ({ tasks, hideDone, toggleTaskDone, removeTask }) => (
   <StyledTasks>
     {tasks.map((task) => (
       <Item key={task.id} hidden={task.done && hideDone}>
-        <TasksButton toggleDone onClick={()=> toggleTaskDone(task.id)}>{task.done ? "✔️" : ""}</TasksButton>
+        <TasksButton toggleDone onClick={() => toggleTaskDone(task.id)}>
+          {task.done ? "✔️" : ""}
+        </TasksButton>
         <Content done={task.done}>{task.content}</Content>
-        <TasksButton remove  onClick={()=>removeTask(task.id)} >🗑</TasksButton>
+        <TasksButton remove onClick={() => removeTask(task.id)}>
+          🗑
+        </TasksButton>
       </Item>
     ))}
   </StyledTasks>

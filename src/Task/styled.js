@@ -42,8 +42,7 @@ export const TasksButton = styled.button`
     toggleDone &&
     css`
       background-color: green;
-    `
-  }
+    `}
 `;
 
 export const Content = styled.p`

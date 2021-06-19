@@ -1,7 +1,7 @@
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import { StyledForm, Button, Input } from "./styled";
 
-export const Form = ({addNewTask}) => {
+export const Form = ({ addNewTask }) => {
   const [newTaskContent, setNewTaskContent] = useState("");
 
   const inputRef = useRef(null);
@@ -21,9 +21,10 @@ export const Form = ({addNewTask}) => {
   return (
     <StyledForm onSubmit={onFormSubmit}>
       <Input
-       value={newTaskContent}
-       onChange={({ target }) => setNewTaskContent(target.value)}
-        placeholder="Co jest do zrobienia"    ref={inputRef}
+        value={newTaskContent}
+        onChange={({ target }) => setNewTaskContent(target.value)}
+        placeholder="Co jest do zrobienia"
+        ref={inputRef}
       />
       <Button>Dodaj zadanie</Button>
     </StyledForm>
