@@ -8,8 +8,8 @@ import { Tasks } from "./Task/Tasks";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState([]);
-
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
+  
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
@@ -50,12 +50,6 @@ function App() {
       },
     ]);
   };
-  useEffect(() => {
-    const localStorageTasks = JSON.parse(localStorage.getItem("tasks"));
-    if (localStorageTasks !== null) {
-      setTasks(localStorageTasks);
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
