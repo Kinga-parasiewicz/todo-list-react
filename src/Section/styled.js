@@ -8,11 +8,11 @@ export const StyledHeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: ${({theme}) =>theme.color.white};
   padding-right: 10px;
   margin: 0 0 1px 0;
 
-  @media (max-width: 768px) {
+  @media (max-width:  ${({theme}) =>theme.breakpoint.horizontal}px) {
     flex-direction: column;
   }
 `;

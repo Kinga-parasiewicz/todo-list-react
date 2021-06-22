@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledTasks = styled.ul`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.color.white};
   padding: 15px;
   list-style-type: none;
   width: 100%;
@@ -13,7 +13,7 @@ export const Item = styled.li`
   padding-bottom: 10px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightGray};
   ${({ hidden }) =>
     hidden &&
     css`
@@ -26,7 +26,7 @@ export const TasksButton = styled.button`
   display: flex;
   justify-content: center;
   align-content: center;
-  color: #fff;
+  color: ${({ theme }) => theme.color.white};
   border: none;
   padding: 5px;
   width: 28px;
@@ -36,12 +36,12 @@ export const TasksButton = styled.button`
   ${({ remove }) =>
     remove &&
     css`
-      background-color: red;
+      background-color: ${({ theme }) => theme.color.red};
     `}
   ${({ toggleDone }) =>
     toggleDone &&
     css`
-      background-color: green;
+      background-color: ${({ theme }) => theme.color.green};
     `}
 `;
 
