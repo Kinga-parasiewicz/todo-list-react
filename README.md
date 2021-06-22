@@ -3,6 +3,22 @@
 # Demo 
 https://kinga-parasiewicz.github.io/todo-list-react/
 
+# Description
+
+This is a simple To Do list application, helps to organize your daily tasks.
+With this to do list you can save your tasks and mark if tasks have been complited.
+
+# Technologies 
+
+- Styled Components
+- ES6 features
+- Immutability Concept
+- Hooks: useState, useEffect, useRef
+- Custom Hooks
+- LocalStorage
+- Responsive Web Design
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
