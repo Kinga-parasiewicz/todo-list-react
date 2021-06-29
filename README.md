@@ -11,7 +11,7 @@ With this to do list you can save your tasks and mark if tasks have been complit
 # Technologies 
 
 - Styled Components
-- ES6 features
+- ES12 features
 - Immutability Concept
 - Hooks: useState, useEffect, useRef
 - Custom Hooks
