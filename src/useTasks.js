@@ -29,6 +29,7 @@ export const useTasks = () => {
       }))
     );
   };
+  
   const addNewTask = (content) => {
     setTasks((tasks) => [
       ...tasks,
@@ -39,6 +40,7 @@ export const useTasks = () => {
       },
     ]);
   };
+  
   return {
     tasks,
     removeTask,
