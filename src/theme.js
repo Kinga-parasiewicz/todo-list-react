@@ -12,7 +12,6 @@ export const theme = {
     green: "#0D9658",
   },
   breakpoint: {
-    mobile: 767,
     horizontal: 768,
   },
 };
