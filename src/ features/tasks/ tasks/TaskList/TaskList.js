@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledTasks, TasksButton, Item, Content } from "./styled";
-export const Tasks = ({ tasks, hideDone, toggleTaskDone, removeTask }) => (
+export const TaskList = ({ tasks, hideDone, toggleTaskDone, removeTask }) => (
   <StyledTasks>
     {tasks.map((task) => (
       <Item key={task.id} hidden={task.done && hideDone}>
