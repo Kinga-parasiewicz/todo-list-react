@@ -12,7 +12,6 @@ With this to do list you can save your tasks and mark if tasks have been complit
 
 - Styled Components (ThemeProvider)
 - ES12 features
-- Immutability Concept
 - Hooks: useState, useEffect, useRef, useSelector, useDispatch
 - Custom Hooks
 - LocalStorage
