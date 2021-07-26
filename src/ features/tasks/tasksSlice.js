@@ -6,6 +6,7 @@ const tasksSlice = createSlice({
   initialState: {
     tasks: getTasksFromLocalStorage(),
     hideDone: false,
+    loading: false,
   },
   reducers: {
     addTask: ({ tasks }, { payload: task }) => {
@@ -14,7 +15,7 @@ const tasksSlice = createSlice({
     toggleHideDone: (state) => {
       state.hideDone = !state.hideDone;
     },
-    toggleTaskDone: ({ tasks }, { payload: taskId}) => {
+    toggleTaskDone: ({ tasks }, { payload: taskId }) => {
       const index = tasks.findIndex(({ id }) => id === taskId);
       tasks[index].done = !tasks[index].done;
     },
@@ -27,9 +28,11 @@ const tasksSlice = createSlice({
       const index = tasks.findIndex(({ id }) => id === payload);
       tasks.splice(index, 1);
     },
-    fetchExampleTasks:() => {},
+    fetchExampleTasks: (state) => {
+      state.loading = true;
+    },
 
-    setTasks: (state, {payload: tasks}) => {
+    setTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
     },
   },
@@ -44,18 +47,21 @@ export const {
   setTasks,
 } = tasksSlice.actions;
 
-export const selectTasks = (state) => state.tasks;
-export const selectHideDone = state => selectTasks(state).hideDone;
-export const getTaskById = (state, taskId) => selectTasks(state).find(({ id }) => id === taskId);
-
+export const selectHideDone = (state) => selectTasksState(state).hideDone;
+export const selectLoading = (state) => selectTasksState(state).loading;
+export const getTaskById = (state, taskId) =>
+  selectTasks(state).find(({ id }) => id === taskId);
+export const selectTasksState = (state) => state.tasks;
+export const selectTasks = (state) => selectTasksState(state).tasks;
 
 export const selectTasksByQuery = (state, query) => {
-  const tasks = selectTasks(state)
+  const tasks = selectTasks(state);
 
   if (!query || query.trim() === "") {
-      return tasks;
+    return tasks;
   }
   return tasks.filter(({ content }) =>
-      content.toUpperCase().includes(query.trim().toUpperCase()))
+    content.toUpperCase().includes(query.trim().toUpperCase())
+  );
 };
 export default tasksSlice.reducer;
