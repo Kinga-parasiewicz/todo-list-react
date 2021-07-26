@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css }from "styled-components";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -18,6 +18,9 @@ export const Input = styled.input`
   margin-right: 10px;
   border: 1px solid ${({ theme }) => theme.color.gray};
   padding: 0px 10px;
+
+  ${(props) => props.searchInput && css`
+  flex-grow: 1;`}
 `;
 
 export const Button = styled.button`
