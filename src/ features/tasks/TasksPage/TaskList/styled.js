@@ -57,3 +57,15 @@ export const Content = styled.p`
       text-decoration: line-through;
     `}
 `;
+
+export const StyledLink = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.black};
+  transition: 0.5s;
+  &:hover {
+    filter: brightness(115%);
+  }
+  &:active {
+    filter: brightness(130%);
+  }
+`;

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  padding:15px;
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 export const StyledHeaderContainer = styled.div`
@@ -9,8 +11,9 @@ export const StyledHeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.color.white};
-  padding-right: 10px;
-  margin: 0 0 1px 0;
+  padding:0px 0px 5px 0px;
+  margin-bottom:2px;
+  border-bottom:1px solid ${({theme})=> theme.color.gallery};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.horizontal}px) {
     flex-direction: column;
