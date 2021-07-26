@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledTasks = styled.ul`
   background-color: ${({ theme }) => theme.color.white};
@@ -58,12 +59,13 @@ export const Content = styled.p`
     `}
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) => theme.color.black};
+  font-size: 17px;
+  color: ${({ theme }) => theme.color.darkTeal};
   transition: 0.5s;
   &:hover {
-    filter: brightness(115%);
+    filter: brightness(185%);
   }
   &:active {
     filter: brightness(130%);
